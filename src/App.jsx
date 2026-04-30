@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="px-6 pb-24">
-      <h1 className="text-3xl font-bold text-[#E6EEC9] mb-2">
+      <h1 className="text-3xl font-bold text-[ #E6EEC9] mb-2">
         ToDo App
       </h1>
 
@@ -41,7 +41,6 @@ function App() {
         Manage your tasks.
       </p>
 
-      {/* Task List */}
       <div className="mt-4 h-[60vh] overflow-y-auto">
         {tasks.map((task, idx) => (
           <TaskCard
@@ -52,7 +51,6 @@ function App() {
         ))}
       </div>
 
-      {/* Add Task Bar */}
       <div className="fixed bottom-0 left-0 w-full bg-white flex items-center justify-center gap-4 p-4 ">
         <input
           type="text"

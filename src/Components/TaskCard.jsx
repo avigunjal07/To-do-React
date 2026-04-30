@@ -24,7 +24,6 @@ function TaskCard({ task, deleteTask }) {
         text-lg
         text-gray-800
         font-medium
-        break-words
       ">
         {task}
       </span>
