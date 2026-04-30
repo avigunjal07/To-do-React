@@ -11,11 +11,20 @@ function TaskCard({ task, deleteTask }) {
       flex
       justify-between
       items-center
+      rounded-xl
+      shadow-sm
+      border
+      border-gray-100
+      hover:shadow-md
+      transition
+      duration-200
+      group
     ">
       <span className="
         text-lg
         text-gray-800
         font-medium
+        break-words
       ">
         {task}
       </span>
@@ -25,6 +34,10 @@ function TaskCard({ task, deleteTask }) {
         className="
           cursor-pointer
           text-gray-400
+          group-hover:text-red-600
+          hover:scale-110
+          transition
+          duration-200
         "
         onClick={() => deleteTask(task)}
       />
