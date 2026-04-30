@@ -14,18 +14,22 @@ function App() {
     }
   }, []);
 
-  
+  const saveTasksToLocalStorage = (tasksToSave) => {
+    localStorage.setItem("tasks", JSON.stringify(tasksToSave));
+  };
 
   const addTask = () => {
     if (!newTask.trim()) return;
     const newTasks = [newTask, ...tasks];
     setTask(newTasks);
     setNewTask("");
+    saveTasksToLocalStorage(newTasks);
   };
 
   const deleteTask = (taskName) => {
     const filteredTask = tasks.filter((task) => task !== taskName);
     setTask(filteredTask);
+    saveTasksToLocalStorage(filteredTask);
   };
 
   return (
