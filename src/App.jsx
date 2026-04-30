@@ -7,6 +7,27 @@ function App() {
   const [tasks, setTask] = useState([]);
   const [newTask, setNewTask] = useState("");
 
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (savedTasks) {
+      setTask(savedTasks);
+    }
+  }, []);
+
+  
+
+  const addTask = () => {
+    if (!newTask.trim()) return;
+    const newTasks = [newTask, ...tasks];
+    setTask(newTasks);
+    setNewTask("");
+  };
+
+  const deleteTask = (taskName) => {
+    const filteredTask = tasks.filter((task) => task !== taskName);
+    setTask(filteredTask);
+  };
+
   return (
     <div className="px-6 pb-24">
       <h1 className="text-3xl font-bold text-[#89986D] mb-2">
